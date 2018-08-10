@@ -1,16 +1,109 @@
-// http://ionicframework.com/docs/theming/
+
+ion-app{
+
+  /*
+  body
+   */
+  background: linear-gradient(black, #5f5f5f);
+
+  /*
+  header
+   */
+  .toolbar-background {
+    border-color: inherit;
+    background: inherit;
+  }
+
+  .bar-button {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: white;
+  }
+
+  ion-title{
+    text-align: center !important;
+  }
+
+  .header::after, .tabs[tabsPlacement="top"] > .tabbar::after, .footer::before, .tabs[tabsPlacement="bottom"] > .tabbar::before {
+    left: 0;
+    bottom: 0;
+    background-position: left 0 top 0;
+    position: absolute;
+    width: 100%;
+    background-image: inherit !important;
+    content: "";
+  }
+
+  .lg img{
+    width: 20%;
+  }
+
+  .ic img{
+    width: 5%;
+  }
+
+  /*
+  content
+   */
+  ion-content{
+    background: transparent !important;
+  }
 
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+  /*
+  footer component
+   */
+  .text-items{
+    font-size: 1em;
+    font-weight: 500;
+  }
+
+  .text-stream{
+    color: #ea5d65;
+    margin-top: -10%;
+    margin-bottom: 5%;
+  }
+
+  .img-stream{
+    width: 25%;
+    float: left;
+  }
+
+  .text-about{
+    color: #2bbbb8;
+    margin-top: -10%;
+    margin-bottom: 5%;
+  }
+
+  .img-about{
+    width: 25%;
+    float: left;
+  }
+
+  .text-promotions{
+    color: #fcba31;
+    margin-top: -10%;
+    margin-bottom: 5%;
+  }
+
+  .img-promotions{
+    width: 25%;
+    float: left;
+  }
+
+  .text-drops{
+    color: #4a9fe8;
+    margin-top: -10%;
+    margin-bottom: 5%;
+  }
+
+  .img-drops{
+    width: 25%;
+    float: left;
+  }
+
+  [col-3] {
+    padding: 0 !important;
+  }
+
+}

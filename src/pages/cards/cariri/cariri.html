@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-row text-center>
+      <ion-col col-12>
+        <navbar-component></navbar-component>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-slides>
+      <ion-slide *ngFor="let card of cards">
+        <img [src]="card.img" class="animated flip"/>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-4></ion-col>
+    <ion-col col-4>
+      <div *ngIf="plaY">
+        <img src="assets/img/play.png" (click)="play()"/>
+      </div>
+      <div *ngIf="!plaY">
+        <img src="assets/img/pause.png" class="animated flip" (click)="pause()"/>
+      </div>
+    </ion-col>
+    <ion-col col-4></ion-col>
+  </ion-row>
+
+</ion-content>
+
+<ion-footer>
+  <footer-component></footer-component>
+</ion-footer>
