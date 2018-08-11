@@ -11,7 +11,7 @@
 <ion-content padding>
 
   <ion-row>
-    <ion-slides>
+    <ion-slides pager effect="coverFlow" spaceBetween="-25px">
       <ion-slide *ngFor="let card of cards">
         <img [src]="card.img" class="animated flip"/>
       </ion-slide>

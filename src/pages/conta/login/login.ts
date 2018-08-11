@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import {IonicPage, MenuController, NavController, ToastController} from 'ionic-angular';
+import { IonicPage, MenuController, NavController, ToastController} from 'ionic-angular';
 import 'rxjs/add/operator/toPromise';
-import { AuthProvider } from "../../providers/auth";
+//import { AuthProvider } from "../../providers/auth";
 
 @IonicPage()
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
+
 export class LoginPage {
 
   user = {
@@ -19,13 +21,13 @@ export class LoginPage {
       public menu: MenuController,
       public navCtrl: NavController,
       public toastCtrl: ToastController,
-      private auth:AuthProvider
+      //private auth:AuthProvider
   ) {
     this.menu.enable(true);
   }
 
   login(){
-    this.auth.login(this.user)
+    /*this.auth.login(this.user)
       .then(() => {
           console.log('Login efetuado com sucesso');
           let toast = this.toastCtrl.create({
@@ -45,7 +47,7 @@ export class LoginPage {
           cssClass: 'toast-login-error'
         });
         toast.present();
-      });
+      });*/
   }
 
   affterLogin(){
@@ -57,7 +59,7 @@ export class LoginPage {
   }
 
   userRegister(){
-    this.navCtrl.setRoot('UserRegisterPage');
+    this.navCtrl.setRoot('RegisterPage');
   }
 
 }

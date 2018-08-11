@@ -25,7 +25,10 @@ export class MyApp {
     this.pages = [
       { title: 'Rede', component: 'HomePage' },
       { title: 'Aracati', component: 'AracatiPage' },
-      { title: 'Cariri', component: 'CaririPage' }
+      { title: 'Cariri', component: 'CaririPage' },
+      { title: 'Conta', component: 'SettingsPage' },
+      { title: 'Login', component: 'LoginPage' },
+      { title: 'Register', component: 'RegisterPage' },
     ];
 
   }

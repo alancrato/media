@@ -5,10 +5,10 @@ import { IonicPage, MenuController, NavController, ToastController } from 'ionic
 @IonicPage()
 
 @Component({
-  selector: 'page-user-register',
-  templateUrl: 'user-register.html',
+  selector: 'page-register',
+  templateUrl: 'register.html',
 })
-export class UserRegisterPage {
+export class RegisterPage {
 
   user = {
     name: '',

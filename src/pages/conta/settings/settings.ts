@@ -8,11 +8,11 @@ import { IonicPage, NavController, NavParams, ToastController} from "ionic-angul
 @IonicPage()
 
 @Component({
-    selector: 'page-my-settings',
-    templateUrl: 'my-settings.html',
+    selector: 'page-settings',
+    templateUrl: 'settings.html',
 })
 
-export class MySettingsPage {
+export class SettingsPage {
 
     user = {
         password: '',
