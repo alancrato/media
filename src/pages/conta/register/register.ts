@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController, ToastController } from 'ionic-angular';
-//import { UserResource } from "../../providers/user.resource";
+import { UserResource } from "../../../providers/user.resource";
 
 @IonicPage()
 
@@ -22,13 +22,13 @@ export class RegisterPage {
       public navCtrl: NavController,
       public menuCtrl: MenuController,
       public tostCtrl: ToastController,
-      //public userResource: UserResource
+      public userResource: UserResource
   ){
       this.menuCtrl.enable(true);
   }
 
   register() {
-    /*this.userResource.create(this.user)
+    this.userResource.create(this.user)
         .then(() => {
           this.menuCtrl.enable(true);
           console.log('Usuário criado com sucesso');
@@ -49,7 +49,7 @@ export class RegisterPage {
             cssClass: 'login-reverse'
           });
           toast.present();
-        })*/
+        })
     }
 
 }

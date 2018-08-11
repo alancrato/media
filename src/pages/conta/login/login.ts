@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, MenuController, NavController, ToastController} from 'ionic-angular';
 import 'rxjs/add/operator/toPromise';
-//import { AuthProvider } from "../../providers/auth";
+import { AuthProvider } from "../../../providers/auth";
 
 @IonicPage()
 
@@ -21,13 +21,13 @@ export class LoginPage {
       public menu: MenuController,
       public navCtrl: NavController,
       public toastCtrl: ToastController,
-      //private auth:AuthProvider
+      private auth:AuthProvider
   ) {
     this.menu.enable(true);
   }
 
   login(){
-    /*this.auth.login(this.user)
+    this.auth.login(this.user)
       .then(() => {
           console.log('Login efetuado com sucesso');
           let toast = this.toastCtrl.create({
@@ -37,7 +37,7 @@ export class LoginPage {
             cssClass: 'login-reverse'
           });
           toast.present();
-        this.affterLogin();
+        this.pushHome();
       })
       .catch(() => {
         let toast = this.toastCtrl.create({
@@ -47,11 +47,7 @@ export class LoginPage {
           cssClass: 'toast-login-error'
         });
         toast.present();
-      });*/
-  }
-
-  affterLogin(){
-    this.navCtrl.setRoot('HomePage');
+      });
   }
 
   pushHome(){

@@ -1,10 +1,10 @@
 import { Component} from "@angular/core";
 import { IonicPage, NavController, NavParams, ToastController} from "ionic-angular";
-//import { Auth } from "../../decorators/auth.decorator";
-//import { UserResource } from "../../providers/user.resource";
-//import {AuthProvider} from "../../providers/auth";
+import { AuthProvider } from "../../../providers/auth";
+import { UserResource } from "../../../providers/user.resource";
+import { Auth } from "../../../decorators/auth.decorator";
 
-//@Auth()
+@Auth()
 @IonicPage()
 
 @Component({
@@ -24,19 +24,19 @@ export class SettingsPage {
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 public toastCtrl: ToastController,
-                //public userResource: UserResource,
-                //public auth:AuthProvider,
+                public userResource: UserResource,
+                public auth:AuthProvider,
     ) {
     }
 
     ionViewDidLoad() {
-        //this.auth.user().then(user => {
-            //this.users = user;
-        //});
+        this.auth.user().then(user => {
+            this.users = user;
+        });
     }
 
     submit() {
-        /*let toast = this.toastCtrl.create({
+        let toast = this.toastCtrl.create({
             duration: 3000,
             position: 'bottom',
             cssClass: '.toast-reverse'
@@ -50,7 +50,7 @@ export class SettingsPage {
             .catch(() => {
                 toast.setMessage('Dados inválidos! Tente novamente');
                 toast.present();
-            })*/
+            })
     }
 
 }
