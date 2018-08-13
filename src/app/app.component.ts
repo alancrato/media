@@ -3,6 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthProvider } from "../providers/auth";
+import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,6 +21,7 @@ export class MyApp {
       public statusBar: StatusBar,
       public splashScreen: SplashScreen,
       public auth: AuthProvider,
+      private storage: Storage,
   ) {
     this.initializeApp();
 
@@ -38,6 +40,14 @@ export class MyApp {
   initializeApp() {
     this.auth.user().then(user => {
       this.user = user;
+    });
+    this.storage.get('notification').then((val) => {
+        console.log('Your age is', val);
+        if(val == 'active'){
+            console.log('User active notifications');
+        }else{
+            console.log('User inactive receive notifications');
+        }
     });
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

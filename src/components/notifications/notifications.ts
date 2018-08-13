@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from "ionic-angular";
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'notifications',
@@ -9,7 +10,8 @@ import { AlertController } from "ionic-angular";
 export class NotificationsComponent {
 
   constructor(
-      public alertCtrl: AlertController
+      public alertCtrl: AlertController,
+      private storage: Storage
   ) {}
 
   showConfirm() {
@@ -20,13 +22,25 @@ export class NotificationsComponent {
         {
           text: 'Ativar?',
           handler: () => {
+            this.storage.set('notification','active');
             console.log('Set localStorage active status to notification!');
+            //aplicar toast
+          }
+        },
+        {
+          text: 'Ler!',
+          handler: () => {
+            this.storage.get('notification').then((val) => {
+              console.log('Your age is', val);
+            });
           }
         },
         {
           text: 'Desativar!',
           handler: () => {
-            console.log('Set localStorage desactive status to notification!');
+            this.storage.remove('notification');
+            console.log('Remove to localStorage desactive status to notification!');
+            //aplicar toast
           }
         }
       ]

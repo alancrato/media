@@ -2,9 +2,9 @@ import { Component} from "@angular/core";
 import { IonicPage, NavController, NavParams, ToastController} from "ionic-angular";
 import { AuthProvider } from "../../../providers/auth";
 import { UserResource } from "../../../providers/user.resource";
-import { Auth } from "../../../decorators/auth.decorator";
+//import { Auth } from "../../../decorators/auth.decorator";
 
-@Auth()
+//@Auth()
 @IonicPage()
 
 @Component({
